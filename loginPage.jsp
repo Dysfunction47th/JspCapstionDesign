@@ -46,7 +46,6 @@ console.log(Kakao.isInitialized());
       Kakao.API.request({
         url: '/v2/user/me',
         success: function(result) {
-          console.log(result);
           $('#result').append(result);
           id = result.id
           connected_at = result.connected_at
@@ -86,7 +85,7 @@ console.log(Kakao.isInitialized());
     },
   })
 
-
+  
 
   
   //window.location.href = "src/components/index.html";
@@ -96,7 +95,7 @@ console.log(Kakao.isInitialized());
 
 <script>
   function mainMove() {
-    //window.location.href = "mainpage.html";
+    window.location.href = "mainpage.html";
   }
   
   mainMove()
