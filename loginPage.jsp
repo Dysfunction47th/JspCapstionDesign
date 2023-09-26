@@ -18,27 +18,31 @@
 
 
 
-
-
-
+  
 <script type="text/javascript">
-
+/// logout code 
   function unlinkApp() {
     Kakao.API.request({
       url: '/v1/user/unlink',
       success: function(res) {
+        console.log(res);
         alert('success: ' + JSON.stringify(res))
+
       },
       fail: function(err) {
         alert('fail: ' + JSON.stringify(err))
       },
     })
+    
+    localStorage.clear()
+    ///  this code use a mainpage therfore if mainpage will complete , moving complet mainpage and this code delete   
+
   }
 </script>
 
 <script type="text/javascript">
 Kakao.init('9e758713051d787381dd4660a0fce536');
-console.log(Kakao.isInitialized());
+console.log(Kakao.isInitialized());                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 
   Kakao.Auth.createLoginButton({
     container: '#kakao-login-btn',
@@ -46,28 +50,32 @@ console.log(Kakao.isInitialized());
       Kakao.API.request({
         url: '/v2/user/me',
         success: function(result) {
+          console.log(result);
           $('#result').append(result);
           id = result.id
           connected_at = result.connected_at
           kakao_account = result.kakao_account
 
           localStorage.setItem('userId' , id)
-          localStorage.setItem('connected_at' , id)
+          localStorage.setItem('connected_at' , connected_at)
           localStorage.setItem('kakao_account' , kakao_account) 
           
           $('#result').append(kakao_account);
-          resultdiv="<h2>로그인 성공 !!"
-          resultdiv += '<h4>id: '+id+'<h4>'
-          resultdiv += '<h4>connected_at: '+connected_at+'<h4>'
+          resultdiv = `<h2> 로그인 성공 !!`
+          resultdiv += `<h4> id: ${localStorage.getItem('userId')}  <h4>`
+          resultdiv += ` <h4>connected_at: ${localStorage.getItem('connected_at')}  <h4> `
           email ="";
           gender = "";
   
           if(typeof kakao_account != 'undefined'){
         	  email = kakao_account.email;
         	  gender = kakao_account.gender;
+            localStorage.setItem("email" , email)
+            localStorage.setItem("gender" , gender)
+
           }
-          resultdiv += '<h4>email: '+email+'<h4>'
-          resultdiv += '<h4>gender: '+gender+'<h4>'
+          resultdiv += ` <h4>email: ${localStorage.getItem('email')}  <h4>`
+          resultdiv += ` <h4>gender: ${localStorage.getItem('gender')} <h4>`
             
           $('#result').append(resultdiv);
           
@@ -85,7 +93,7 @@ console.log(Kakao.isInitialized());
     },
   })
 
-  
+
 
   
   //window.location.href = "src/components/index.html";
@@ -95,7 +103,7 @@ console.log(Kakao.isInitialized());
 
 <script>
   function mainMove() {
-    window.location.href = "mainpage.html";
+    //window.location.href = "mainpage.html";
   }
   
   mainMove()
