@@ -19,19 +19,19 @@
 <script>
     // 로컬 스토리지에서 유저 ID를 가져오는 함수
     function getUserID() {
-        // 로컬 스토리지에서 userid 키로 저장된 값을 가져옵니다.
-        const userID = localStorage.getItem("userId");
+        // 로컬 스토리지에서 userid 키로 저장된 값을 가져옴.
+        const userID = localStorage.getItem("userId")
 
-        // 만약 유저 ID가 저장되어 있다면 해당 값을 반환하고, 아니면 빈 문자열을 반환합니다.
+        // 만약 유저 ID가 저장되어 있다면 해당 값을 반환하고, 아니면 빈 문자열을 반환.
         return userID ? userID : "";
     }
 
     // 페이지 로딩 시 실행되는 함수
     window.onload = function () {
-        // 유저 ID를 가져옵니다.
+        // 유저 ID를 가져옴.
         const userID = getUserID();
 
-        // 유저 ID가 있으면 해당 ID를 사용하여 <li> 요소를 수정합니다.
+        // 유저 ID가 있으면 해당 ID를 사용하여 <li> 요소를 수정.
         if (userID) {
             const userMenu = document.getElementById("userMenu");
             const anchor = userMenu.querySelector("a");
@@ -46,15 +46,7 @@
         <div class="inner">
             <!-- <h1><a href="#">VESLAB</a></h1>  -->
                         <!-- videoEditSoftwareLAB -->
-
-            <ul id="gnb">
-                <li><a href="#">DEPARTMENT</a></li>
-                <!-- <li><a href="#">FOUNCTION</a></li> -->
-                <!-- <li><a href="#">SHOWCASE</a></li> -->
-                <li><a href="#">SYSTEM REQUIRMENTS </a></li>
-                <li id=""><a href="#" onclick="location.href='boardAlist.jsp'">Learning and Support</a></li>
-            </ul>
-
+            
             <ul class="util">
                 <li><a href="#">Contact</a></li>
                 <li><a href="#">Help</a></li>
@@ -64,6 +56,17 @@
                 <li><a href="#">Join</a></li>
                 <li><a href="#">Sitemap</a></li>
             </ul>
+
+
+            <ul id="gnb">
+                <li><a href="#">트랜드</a></li>
+                <!-- <li><a href="#">FOUNCTION</a></li> -->
+                <!-- <li><a href="#">SHOWCASE</a></li> -->
+                <li><a href="#"> 모름 </a></li>
+                <li id=""><a href="#" onclick="location.href='boardAlist.jsp'">추천게시판</a></li>
+            </ul>
+
+
         </div>
     </header>
 
