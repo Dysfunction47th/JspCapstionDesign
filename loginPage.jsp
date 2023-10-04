@@ -59,7 +59,11 @@ console.log(Kakao.isInitialized());
           localStorage.setItem('userId' , id)
           localStorage.setItem('connected_at' , connected_at)
           localStorage.setItem('kakao_account' , kakao_account) 
-          
+          //  id key for localStorage is userId
+          //  connect_at key fo localStorage is connect_at 
+          //  kakao_account key fo localStorage is kakao_account
+          //  
+
           $('#result').append(kakao_account);
           resultdiv = `<h2> 로그인 성공 !!`
           resultdiv += `<h4> id: ${localStorage.getItem('userId')}  <h4>`

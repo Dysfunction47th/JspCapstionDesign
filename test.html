@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 여기에 필요한 메타 태그, 스타일시트, 스크립트 등을 추가하세요 -->
+</head>
+<body>
+    <header>
+        <div class="inner">
+            <!-- 다른 메뉴 항목들 -->
+            <ul id="gnb">
+                <!-- 다른 메뉴 항목들 -->
+                <li id="userMenu"><a href="#">USER</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- 나머지 내용들 -->
+
+    <script>
+        // 로컬 스토리지에서 유저 ID를 가져오는 함수
+        function getUserID() {
+            // 로컬 스토리지에서 userid 키로 저장된 값을 가져옵니다.
+            const userID = localStorage.getItem("userid");
+
+            // 만약 유저 ID가 저장되어 있다면 해당 값을 반환하고, 아니면 빈 문자열을 반환합니다.
+            return userID ? userID : "";
+        }
+
+        // 페이지 로딩 시 실행되는 함수
+        window.onload = function () {
+            // 유저 ID를 가져옵니다.
+            const userID = getUserID();
+
+            // 유저 ID가 있으면 해당 ID를 사용하여 <li> 요소를 수정합니다.
+            if (userID) {
+                const userMenu = document.getElementById("userMenu");
+                const anchor = userMenu.querySelector("a");
+                anchor.textContent = `${userID}님`;
+            }
+        };
+    </script>
+</body>
+</html>
