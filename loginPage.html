@@ -7,12 +7,21 @@
 
 </head>
 
+<script>
+  function mainMove() {
+    window.location.href = "mainpage.html";
+  }
+  
+  
+</script>
+
+
 <body>
 	<a id="kakao-login-btn">
    
   </a>
   
-	<button class="api-btn" onclick="unlinkApp()">앱 탈퇴하기</button>
+	<button class="api-btn" onclick="unlinkApp()">로그아웃하기</button>
 
 	<div id="result"></div>
 
@@ -78,6 +87,9 @@ console.log(Kakao.isInitialized());
           resultdiv += ` <h4>gender: ${localStorage.getItem('gender')} <h4>`
             
           $('#result').append(resultdiv);
+
+          mainMove()
+
           
         },
         fail: function(error) {
@@ -96,18 +108,11 @@ console.log(Kakao.isInitialized());
 
 
   
-  //window.location.href = "src/components/index.html";
 
 
 </script>
 
-<script>
-  function mainMove() {
-    //window.location.href = "mainpage.html";
-  }
-  
-  mainMove()
-</script>
+
 
 </body>
 </html>
