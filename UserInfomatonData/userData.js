@@ -8,7 +8,7 @@
 const request = new XMLHttpRequest;
 
 // 2. 요청 초기화
-request.open('get' , "./LoginAndLogout/login" , true)
+request.open('get' , "http://127.0.0.1:5500/mainpage.html" , true)
 
 // 3. 요청 전송
 request.send()
