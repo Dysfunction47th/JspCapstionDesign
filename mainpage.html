@@ -4,6 +4,9 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +16,7 @@
     <link rel="stylesheet" href="/css/veslab_style.css">
     
     <!-- <script src="js/ie.js"></script> -->
-
+    
 </head>
 
 <script>
@@ -38,7 +41,12 @@
             anchor.textContent = `${userID}님`;
         }
     };
+
+    // 이후 보안을 위해 로컬 스토리지 초기화
 </script>
+
+<script src="/LoginAndLogout/logout.js"></script>
+
 
 <body>
 
@@ -51,9 +59,11 @@
                 <li><a href="#">Contact</a></li>
                 <li><a href="#">Help</a></li>
 <!--                <li><a href="#" onclick="location.href='login.jsp'">Login</a></li> -->
-				<li id="userMenu"><a href="#" onclick="location.href='userInfo.jsp'"></a> </li>
+				<li id="userMenu"><a href="#" onclick="location.href='userInfo.html'"></a> </li>
+				
+                <li class="api-btn" onclick="logout()"> <a href="#">logout</a></li>
+                <li id="UserLogout"><a href="#" ></a></li>
                 
-                <li><a href="#">Join</a></li>
                 <li><a href="#">Sitemap</a></li>
             </ul>
 

@@ -7,12 +7,26 @@
 
 </head>
 
+<script>
+  // **참고** css가 완성되지 않아 보기가 안좋음 따라 css를 완성하기 전까지 모든것은 프로토 타입이기에 
+  // 감안하고 보아야 함 
+  function mainMove() {
+    window.location.href = "mainpage.html";
+  }
+  
+  function testMove() {
+    window.location.href = "test.html";
+  }
+  
+</script>
+
+
 <body>
 	<a id="kakao-login-btn">
    
   </a>
   
-	<button class="api-btn" onclick="unlinkApp()">앱 탈퇴하기</button>
+	<button class="api-btn" onclick="unlinkApp()">로그아웃하기</button>
 
 	<div id="result"></div>
 
@@ -59,11 +73,7 @@ console.log(Kakao.isInitialized());
           localStorage.setItem('userId' , id)
           localStorage.setItem('connected_at' , connected_at)
           localStorage.setItem('kakao_account' , kakao_account) 
-          //  id key for localStorage is userId
-          //  connect_at key fo localStorage is connect_at 
-          //  kakao_account key fo localStorage is kakao_account
-          //  
-
+          
           $('#result').append(kakao_account);
           resultdiv = `<h2> 로그인 성공 !!`
           resultdiv += `<h4> id: ${localStorage.getItem('userId')}  <h4>`
@@ -82,6 +92,9 @@ console.log(Kakao.isInitialized());
           resultdiv += ` <h4>gender: ${localStorage.getItem('gender')} <h4>`
             
           $('#result').append(resultdiv);
+
+          mainMove()
+          //testMove()
           
         },
         fail: function(error) {
@@ -100,18 +113,11 @@ console.log(Kakao.isInitialized());
 
 
   
-  //window.location.href = "src/components/index.html";
 
 
 </script>
 
-<script>
-  function mainMove() {
-    //window.location.href = "mainpage.html";
-  }
-  
-  mainMove()
-</script>
+
 
 </body>
 </html>
