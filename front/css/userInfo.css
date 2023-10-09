@@ -1,0 +1,33 @@
+.inner {
+    display: flex;
+    flex-direction: column;
+    order: -1; /* 위로 이동 */
+    display: flex; /* 가로로 정렬 */
+    justify-content: space-between; /* 간격을 두고 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+    align-content: center;
+    flex-grow: 1; /* input 요소를 가로로 확장 */
+
+}
+
+
+
+
+span:nth-child(1),
+span:nth-child(2) {
+    order: -1; /* 위로 이동 */
+    display: flex; /* 가로로 정렬 */
+    justify-content: space-between; /* 간격을 두고 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+    align-content: center;
+}
+
+span:nth-child(1) input,
+span:nth-child(2) input {
+    flex-grow: 1; /* input 요소를 가로로 확장 */
+}
+
+span:nth-child(3),
+span:nth-child(4) {
+    order: 2; /* 바로 아래로 이동 */
+}
