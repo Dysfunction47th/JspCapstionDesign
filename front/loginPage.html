@@ -1,28 +1,29 @@
-<!doctype html>
-<html lang="ko">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/test.css">
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 
-<script src="/back/LoginAndLogout/login.js"></script>
-
+    <script src="/back/LoginAndLogout/login.js"></script>
 
 </head>
-
-
-
-
 <body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="#" method="">
 
-	<!-- <a id="kakao-login-btn"> <script> login() </script></a> -->
-	<a id="kakao-login-btn"> <script> login() </script></a>
-  
-	<button class="api-btn" onclick="unlinkApp()">로그아웃하기</button>
+            <div class="input-group">
+                <a id="kakao-login-btn"> <script> login() </script></a>
 
-	<div id="result"></div>
+            </div>
+            
+            <button class="api-btn" onclick="unlinkApp()">로그아웃하기</button>
 
-
-
-
+        </form>
+    </div>
 </body>
 </html>
